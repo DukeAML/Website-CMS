@@ -1,8 +1,10 @@
-import React from 'react';
+import {React, useState} from 'react';
 import AddMembers from './AddMembers';
 import AddPapers from './AddPapers';
 import AddProjects from './AddProjects';
-import {Tabs, Tab} from 'react-bootstrap/Tabs';
+import Tabs from 'react-bootstrap/Tabs';
+import Tab from 'react-bootstrap/Tab';
+
 
 
 function App() {
