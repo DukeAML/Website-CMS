@@ -17,11 +17,11 @@ function App() {
       <Tab eventKey="members" title="Members">
       <AddMembers/>
       </Tab>
-      <Tab eventKey="papers" title="Papers">
-        <AddPapers />
-      </Tab>
       <Tab eventKey="projects" title="Projects">
         <AddProjects />
+      </Tab>
+      <Tab eventKey="papers" title="Papers">
+        <AddPapers />
       </Tab>
     </Tabs>
   );

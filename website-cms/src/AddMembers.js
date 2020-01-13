@@ -4,7 +4,7 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 const AddMembers = (props) => {
   return (
     <div>
-    <h1>Add a Member to the Member Page</h1>
+    <h1>Add New Member to the Member Page</h1>
     <Form>
             {/*Text input for Team Name*/}
       <FormGroup>
@@ -23,21 +23,21 @@ const AddMembers = (props) => {
       </FormGroup>
             {/*Text input for LinkedIn Link*/}
       <FormGroup>
-        <Label for="LinkedIn">LinkedIn Link </Label>
+        <Label for="LinkedIn">Personal LinkedIn Link </Label>
         <Input type="text" name="linkedin" id="LinkedIn" placeholder="ex. website.com" />
       </FormGroup>
             {/*Text input for Github Link*/}
       <FormGroup>
-        <Label for="Github">Github Link </Label>
+        <Label for="Github">Personal Github Link </Label>
         <Input type="text" name="github" id="Github" placeholder="ex. website.com" />
       </FormGroup>
                   {/*File input for Cover Photo*/}
       <FormGroup>
         <Label for="CoverPhoto">Cover Photo </Label>
-        <Input type="file" name="file" id="CoverPhoto" />
+        <Input type="file" name="CoverPhoto" id="CoverPhoto" />
       </FormGroup>
                   {/*Form Submit Button*/}
-      <Button>Submit</Button>
+      <Button>Add Member</Button>
     </Form>
     </div>
   );
