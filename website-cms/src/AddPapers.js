@@ -4,7 +4,7 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 const AddPapers = (props) => {
   return (
     <div>
-    <h1>Add New Paper to the Paper Page</h1>
+    <h1>Add New Paper </h1>
     <Form>
             {/*Text input for Authors*/}
       <FormGroup>
@@ -21,15 +21,20 @@ const AddPapers = (props) => {
         <Label for="DOI">Digitial Object Identifier (DOI) </Label>
         <Input type="text" name="DOI" id="DOI" placeholder="ex. 10.1080/01972240490951890" />
       </FormGroup>
-            {/*Textarea input for Publication Date*/}
-      <FormGroup>
-        <Label for="PublicationDate">Publication Date </Label>
-        <Input type="text" name="PublicationDate" id="PublicationDate" placeholder="ex. Fill in later." />
+            {/*Date input for Publication Date*/}
+            <FormGroup>
+        <Label for="PublicationDate">Publication Date</Label>
+        <Input
+          type="date"
+          name="date"
+          id="exampleDate"
+          placeholder="date placeholder"
+        />
       </FormGroup>
             {/*Textarea input for Link To Full Text*/}
-            <FormGroup>
+      <FormGroup>
         <Label for="FullLink">Link To Full Text </Label>
-        <Input type="textarea" name="FullLink" id="FullLink" placeholder="ex. http://www.machinelearning.ru/wiki/images/0/07/Langley00crafting.pdf" />
+        <Input type="text" name="FullLink" id="FullLink" placeholder="ex. http://www.machinelearning.ru/wiki/images/0/07/Langley00crafting.pdf" />
       </FormGroup>
       </Form>
      
