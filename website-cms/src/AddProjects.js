@@ -34,6 +34,9 @@ const AddProjects = (props) => {
       </FormGroup>
             {/*Form Submit Button*/}
       <Button>Add Project</Button>
+      <br></br>
+      <br></br>
+      <Button>Edit Project</Button>
     </div>
   );
 }

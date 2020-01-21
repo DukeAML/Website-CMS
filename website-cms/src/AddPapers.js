@@ -40,6 +40,10 @@ const AddPapers = (props) => {
      
             {/*Form Submit Button*/}
       <Button>Add Paper</Button>
+      <br></br>
+      <br></br>
+      <Button>Edit Paper</Button>
+
     </div>
   );
 }

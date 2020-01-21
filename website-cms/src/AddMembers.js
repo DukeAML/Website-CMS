@@ -38,6 +38,10 @@ const AddMembers = (props) => {
       </FormGroup>
                   {/*Form Submit Button*/}
       <Button>Add Member</Button>
+      <br></br>
+      <br></br>
+      <Button>Edit Member</Button>
+
     </Form>
     </div>
   );
