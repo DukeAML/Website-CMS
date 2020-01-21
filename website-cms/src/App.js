@@ -2,6 +2,7 @@ import React from 'react';
 import AddMembers from './AddMembers';
 import AddPapers from './AddPapers';
 import AddProjects from './AddProjects';
+import LandingPage from './LandingPage';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,7 +17,7 @@ function App() {
   return (
     <Tabs id="controlled-tabs" activeKey={key} onSelect={k => setKey(k)}>
       <Tab eventKey="home" title="Home">
-      <div>Home</div>
+      <LandingPage/>
       </Tab>
       <Tab eventKey="members" title="Members">
       <AddMembers/>
@@ -28,6 +29,7 @@ function App() {
         <AddPapers />
       </Tab>
     </Tabs>
+    
   );
 }
 
