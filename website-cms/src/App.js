@@ -15,6 +15,9 @@ function App() {
  
   return (
     <Tabs id="controlled-tabs" activeKey={key} onSelect={k => setKey(k)}>
+      <Tab eventKey="home" title="Home">
+      <div>Home</div>
+      </Tab>
       <Tab eventKey="members" title="Members">
       <AddMembers/>
       </Tab>
