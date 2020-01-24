@@ -3,6 +3,7 @@ import AddMembers from './AddMembers';
 import AddPapers from './AddPapers';
 import AddProjects from './AddProjects';
 import LandingPage from './LandingPage';
+import Header from './Header';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,11 +12,14 @@ import "./Forms.css";
 
 
 
+
 function App() {
-  const [key, setKey] = useState('members');
+  const [key, setKey] = useState('home');
  
   return (
-    <Tabs id="controlled-tabs" activeKey={key} onSelect={k => setKey(k)}>
+    <div>
+    <Header className = "headers" />
+    <Tabs className = "tabs" id="controlled-tabs" activeKey={key} onSelect={k => setKey(k)}>
       <Tab eventKey="home" title="Home">
       <LandingPage/>
       </Tab>
@@ -29,8 +33,11 @@ function App() {
         <AddPapers />
       </Tab>
     </Tabs>
-    
+    </div>
   );
 }
 
 export default App;
+
+
+

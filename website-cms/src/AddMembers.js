@@ -3,7 +3,7 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 const AddMembers = (props) => {
   return (
-    <div>
+    <div id = "members">
     <h1>Add New Member </h1>
     <Form>
             {/*Text input for Team Name*/}
