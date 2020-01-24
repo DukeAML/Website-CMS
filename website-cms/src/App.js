@@ -4,6 +4,7 @@ import AddPapers from './AddPapers';
 import AddProjects from './AddProjects';
 import LandingPage from './LandingPage';
 import Header from './Header';
+import Footer from './Footer';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -17,9 +18,9 @@ function App() {
   const [key, setKey] = useState('home');
  
   return (
-    <div>
-   <Header prop = {window.location.reload}/> 
-    <Tabs className = "tabs" id="controlled-tabs" activeKey={key} onSelect={k => setKey(k)}>
+    <div className = "body">
+   <Header/> 
+    <Tabs className = "tab" id="controlled-tabs" activeKey={key} onSelect={k => setKey(k)}>
       <Tab eventKey="home" title="Home">
       <LandingPage/>
       </Tab>
@@ -33,6 +34,7 @@ function App() {
         <AddPapers />
       </Tab>
     </Tabs>
+    
     </div>
   );
 }

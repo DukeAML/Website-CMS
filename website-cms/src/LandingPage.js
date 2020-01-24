@@ -1,9 +1,10 @@
 import React from 'react';
+import './Forms.css';
 
 
 const LandingPage = (props) => {
   return (
-    <div>
+    <div className ="home">
      homepage haha
     </div>
   );

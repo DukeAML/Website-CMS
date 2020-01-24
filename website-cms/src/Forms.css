@@ -1,5 +1,5 @@
 * {
-    margin-left: 0.1%;
+    padding-left: 0.1%;
     background-color: #2f3e4e;
     color: #F0EFF5;
     font-family: Noto Sans;
@@ -7,10 +7,18 @@
     
 }
 
+.damllogo{
+    float:left;
+}
 
-.button {
-    border: none;
-    padding-left: 1px;
+#header, .footer {
+    padding-bottom: 20px;
+   
+    background-color: #1e2c3a !important;
 }
 
 
+
+.home{
+    height: 100%;
+}
