@@ -5,8 +5,7 @@ import './Forms.css';
 const Footer = (props) => {
   return (
     <div className = "footer">
-    <a href ="javascript:history.go(0)" ><img className = "damllogo" src={require("./images/whitedaml.png")} width = "150" height = "100" /> </a>
-    <h1>Duke Applied Machine Learning</h1>
+    <h3>Luke's Phone Number: (320) 333-8531</h3>
     </div>
   );
 }

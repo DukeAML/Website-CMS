@@ -18,8 +18,11 @@ function App() {
   const [key, setKey] = useState('home');
  
   return (
-    <div className = "body">
-   <Header/> 
+    <div>
+    <header>
+    <Header/> 
+    </header>
+    <main className="body">
     <Tabs className = "tab" id="controlled-tabs" activeKey={key} onSelect={k => setKey(k)}>
       <Tab eventKey="home" title="Home">
       <LandingPage/>
@@ -34,7 +37,10 @@ function App() {
         <AddPapers />
       </Tab>
     </Tabs>
-    
+    </main>
+    <footer>
+      <Footer/>
+    </footer>
     </div>
   );
 }

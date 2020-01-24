@@ -1,24 +1,39 @@
 * {
-    padding-left: 0.1%;
-    background-color: #2f3e4e;
+    
+  
     color: #F0EFF5;
     font-family: Noto Sans;
-    
+   
     
 }
 
-.damllogo{
+.damllogoh{
     float:left;
 }
 
-#header, .footer {
-    padding-bottom: 20px;
-   
-    background-color: #1e2c3a !important;
+
+
+.header, .footer {
+    padding-bottom: 45px;
+    padding-top: 10px;
+    box-sizing: border-box;
+    background-color: #1e2c3a;
+    padding-left: 0.1%;
 }
 
+.footer{
+    text-align: center;
+}
 
-
-.home{
+ .body {
+    background-color: #2f3e4e;
+    box-sizing: border-box;
     height: 100%;
+    padding-left: 0.5%;
+    padding-bottom: 10px;
+}
+
+.members, .home, .papers, .projects{
+    box-sizing: border-box;
+    padding-bottom: 100%;
 }

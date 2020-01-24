@@ -3,7 +3,7 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 const AddPapers = (props) => {
   return (
-    <div>
+    <div className = "papers">
     <h1>Add New Paper </h1>
     <Form>
             {/*Text input for Authors*/}
