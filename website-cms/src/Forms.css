@@ -11,7 +11,9 @@
     float:left;
 }
 
-
+.home{
+    text-align: center;
+}
 
 .header, .footer {
     padding-bottom: 45px;
