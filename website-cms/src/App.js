@@ -18,7 +18,7 @@ function App() {
  
   return (
     <div>
-    <Header className = "headers" />
+   <Header prop = {window.location.reload}/> 
     <Tabs className = "tabs" id="controlled-tabs" activeKey={key} onSelect={k => setKey(k)}>
       <Tab eventKey="home" title="Home">
       <LandingPage/>

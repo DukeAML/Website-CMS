@@ -1,11 +1,16 @@
 * {
     margin-left: 0.1%;
-    background-color: #2B3E50;
+    background-color: #2f3e4e;
     color: #F0EFF5;
+    font-family: Noto Sans;
+    
     
 }
 
-.headers {
-    height: 500px;
-    width: 100%; 
+
+.button {
+    border: none;
+    padding-left: 1px;
 }
+
+
