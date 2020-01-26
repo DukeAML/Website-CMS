@@ -3,6 +3,7 @@ import AddMembers from './AddMembers';
 import AddPapers from './AddPapers';
 import AddProjects from './AddProjects';
 import LandingPage from './LandingPage';
+import SearchExisting from './SearchExisting';
 import Header from './Header';
 import Footer from './Footer';
 import Tabs from 'react-bootstrap/Tabs';
@@ -25,10 +26,10 @@ function App() {
     <main className="body">
     <Tabs className = "tab" id="controlled-tabs" activeKey={key} onSelect={k => setKey(k)}>
       <Tab eventKey="home" title="Home">
-      <LandingPage/>
+      <LandingPage/> 
       </Tab>
       <Tab eventKey="members" title="Members">
-      <AddMembers/>
+      <AddMembers/><SearchExisting/>
       </Tab>
       <Tab eventKey="projects" title="Projects">
         <AddProjects />

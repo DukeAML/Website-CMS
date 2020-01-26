@@ -38,4 +38,11 @@
 .members, .home, .papers, .projects{
     box-sizing: border-box;
     padding-bottom: 100%;
+    
+}
+
+.members, .papers, .projects{
+    width: 50%;
+    
+    
 }
