@@ -1,11 +1,16 @@
 import React from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 const AddMembers = (props) => {
+  function logsomething() {
+    console.log(document.getElementById("form"));
+}
+  
+  
   return (
     <div className = "members">
     <h1>Add New Member </h1>
-    <Form>
+    <Form id = "form">
             {/*Text input for Team Name*/}
       <FormGroup>
         <Label for="TeamName">Team </Label>
@@ -37,10 +42,10 @@ const AddMembers = (props) => {
         <Input type="file" name="CoverPhoto" id="CoverPhoto" />
       </FormGroup>
                   {/*Form Submit Button*/}
-      <Button>Add Member</Button>
+      <Button  onSubmit={logsomething}>Add Member</Button>
       <br></br>
       <br></br>
-      <Button>Edit Member</Button>
+      <Button >Edit Member</Button>
 
     </Form>
     </div>
