@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 const AddPapers = (props) => {
   return (
-    <div>
+    <div className = "papers">
     <h1>Add New Paper </h1>
     <Form>
             {/*Text input for Authors*/}
@@ -40,9 +40,6 @@ const AddPapers = (props) => {
      
             {/*Form Submit Button*/}
       <Button>Add Paper</Button>
-      <br></br>
-      <br></br>
-      <Button>Edit Paper</Button>
 
     </div>
   );

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 const AddProjects = (props) => {
   return (
-    <div>
+    <div className = "projects">
     <h1>Add New Project </h1>
     <Form>
             {/*Text input for Project Title*/}
@@ -34,9 +34,6 @@ const AddProjects = (props) => {
       </FormGroup>
             {/*Form Submit Button*/}
       <Button>Add Project</Button>
-      <br></br>
-      <br></br>
-      <Button>Edit Project</Button>
     </div>
   );
 }
