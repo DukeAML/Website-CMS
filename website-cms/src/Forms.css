@@ -28,11 +28,11 @@
 }
 
  .body {
-    background-color: #2f3e4e;
     box-sizing: border-box;
     height: 100%;
     padding-left: 0.5%;
     padding-bottom: 10px;
+    background-color: #2B3E50;
 }
 
 .members, .home, .papers, .projects{
