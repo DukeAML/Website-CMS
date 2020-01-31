@@ -12,12 +12,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState} from 'react';
 import "./Forms.css";
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> f3069f9043285b164dfc4ab2e50353542a6beb47
 function App() {
   const [key, setKey] = useState('home');
  
