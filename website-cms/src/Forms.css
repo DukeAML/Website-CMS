@@ -41,8 +41,6 @@
     
 }
 
-.members, .papers, .projects{
-    width: 50%;
-    
-    
+.tab {
+    color: red !important;
 }

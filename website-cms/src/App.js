@@ -8,10 +8,11 @@ import Header from './Header';
 import Footer from './Footer';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
-import Container from "react-bootstrap/Container"
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState} from 'react';
 import "./Forms.css";
+import { Container, Row, Col } from 'reactstrap';
 
 function App() {
   const [key, setKey] = useState('home');
@@ -19,27 +20,52 @@ function App() {
   return (
     <Container>
       <header>
-      <Header /> 
+      <Row md = "1"><Header/></Row>
       </header>
+      <Row md = "1">
       <main className="body">
+      
       <Tabs  className = "tab" id="controlled-tabs" activeKey={key} onSelect={k => setKey(k)}>
-        <Tab eventKey="home" title="Home">
+        {/*Landing Page*/}
+        <Tab className = "tab" style={{color: "red"}} eventKey="home" title="Home" >
         <LandingPage/> 
         </Tab>
+
+        {/*Members Page*/}
         <Tab eventKey="members" title="Members">
-        <AddMembers/><SearchExisting/>
+        <Row>
+        <Col md = {6}><AddMembers/></Col>
+        <Col md = {6}><SearchExisting/></Col>
+        </Row>
         </Tab>
+
+        {/*Projects Page*/}
         <Tab eventKey="projects" title="Projects">
-          <AddProjects />
+        <Row>
+        <Col md = {6}><AddProjects/></Col>
+        <Col md = {6}><SearchExisting/></Col>
+        </Row>
         </Tab>
+        
+        {/*Papers Page*/}
         <Tab eventKey="papers" title="Papers">
-          <AddPapers />
+        <Row>
+        <Col md = {6}><AddPapers/></Col>
+        <Col md = {6}><SearchExisting/></Col>
+        </Row>
         </Tab>
+
       </Tabs>
+
       </main>
+
+      </Row>
+
+      <Row md = "1">
       <footer>
         <Footer/>
       </footer>
+      </Row>
     </Container>
   );
 }
