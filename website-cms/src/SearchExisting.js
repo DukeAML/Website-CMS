@@ -20,10 +20,10 @@ const SearchExisting = (props) => {
         </DropdownToggle>
       <DropdownMenu>
         
-        <DropdownItem><div onClick={toggle}>Custom dropdown 1</div></DropdownItem>
-        <div onClick={toggle}>Custom dropdown 2</div>
-        <div onClick={toggle}>Custom dropdown 3</div>
-        <div onClick={toggle}>Custom dropdown 4</div>
+        <DropdownItem><div style={{color: "blue"}} onClick={toggle}>Item 1</div></DropdownItem>
+        <DropdownItem><div style={{color: "blue"}} onClick={toggle}>Item 2</div></DropdownItem>
+        <DropdownItem><div style={{color: "blue"}} onClick={toggle}>Item 3</div></DropdownItem>
+        <DropdownItem><div style={{color: "blue"}} onClick={toggle}>Item 4</div></DropdownItem>
       </DropdownMenu>
     </Dropdown>
     </div>
