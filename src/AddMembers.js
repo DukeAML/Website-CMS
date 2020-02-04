@@ -14,7 +14,7 @@ const AddMembers = (props) => {
             {/*Text input for Team Name*/}
       <FormGroup>
         <Label for="TeamName">Team </Label>
-        <Input type="text" name="Team" id="TeamName" placeholder="ex. Software" />
+        <Input type="text" name="Team" id="TeamName" placeholder="ex. Software" defaultValue = "wyatt" />
       </FormGroup>
             {/*Text input for School Name*/}
       <FormGroup>
