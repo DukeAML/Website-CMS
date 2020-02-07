@@ -14,10 +14,8 @@ const SearchExisting = (props) => {
   return (
     <div >
     <h1>Search Existing</h1>
-    
-    <div className = "table-wrapper-scroll-y my-custom-scrollbar" >
-    <Table striped bordered hover responsive >
-  <thead>
+    <Table striped bordered hover responsive>
+    <thead>
     <tr >
       <th>#</th>
       <th>First Name</th>
@@ -25,6 +23,12 @@ const SearchExisting = (props) => {
      
     </tr>
   </thead>
+
+  
+    </Table>
+    <div className = "table-wrapper-scroll-y my-custom-scrollbar" >
+    <Table striped bordered hover responsive >
+  
   <tbody className= "tableb">
     <tr>
       <td>1</td>
