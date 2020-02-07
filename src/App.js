@@ -6,6 +6,7 @@ import LandingPage from './LandingPage';
 import SearchExisting from './SearchExisting';
 import Header from './Header';
 import Footer from './Footer';
+import AddDnews from './AddDnews';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 
@@ -18,7 +19,7 @@ function App() {
   const [key, setKey] = useState('home');
  
   return (
-    <Container fluid>
+    <Container fluid >
       <header>
       <Row md = "1"><Header/></Row>
       </header>
@@ -34,24 +35,32 @@ function App() {
         {/*Members Page*/}
         <Tab eventKey="members" title="Members">
         <Row>
-        <Col md = {6}><AddMembers/></Col>
-        <Col md = {6}><SearchExisting/></Col>
+        <Col md = {6} className = "left"><AddMembers/></Col>
+        <Col md = {6} className = "right"><SearchExisting/></Col>
         </Row>
         </Tab>
 
         {/*Projects Page*/}
         <Tab eventKey="projects" title="Projects">
         <Row>
-        <Col md = {6}><AddProjects/></Col>
-        <Col md = {6}><SearchExisting/></Col>
+        <Col md = {6} className = "left"><AddProjects/></Col>
+        <Col md = {6} className = "right"><SearchExisting/></Col>
         </Row>
         </Tab>
         
         {/*Papers Page*/}
         <Tab eventKey="papers" title="Papers">
         <Row>
-        <Col md = {6}><AddPapers/></Col>
-        <Col md = {6}><SearchExisting/></Col>
+        <Col md = {6} className = "left"><AddPapers/></Col>
+        <Col md = {6} className = "right" ><SearchExisting/></Col>
+        </Row>
+        </Tab>
+
+        {/*DAML News*/}
+        <Tab eventKey="news" title="DAML News">
+        <Row>
+        <Col md = {6} className = "left"><AddDnews/></Col>
+        <Col md = {6} className = "right" ><SearchExisting/></Col>
         </Row>
         </Tab>
 

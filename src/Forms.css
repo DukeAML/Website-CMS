@@ -7,6 +7,7 @@
     
 }
 
+
 .damllogoh{
     float:left;
 }
@@ -43,6 +44,7 @@
 
 .tab {
     color: red !important;
+    
 }
 
 .tableb {
@@ -63,3 +65,17 @@ td {
     .table-wrapper-scroll-y {
     display: block;
     }
+
+    .left {
+        padding-left: 3%;
+    }
+
+    .right {
+        padding-right: 3%;
+    }
+
+    .left, .right {
+        padding-top: 0%;
+    }
+
+    
