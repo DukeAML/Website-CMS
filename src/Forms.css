@@ -44,3 +44,22 @@
 .tab {
     color: red !important;
 }
+
+.tableb {
+    background-color: whitesmoke;
+    overflow-y: scroll;
+}
+
+td {
+    color: black;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+    display: block;
+    }

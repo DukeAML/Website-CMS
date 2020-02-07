@@ -18,7 +18,7 @@ function App() {
   const [key, setKey] = useState('home');
  
   return (
-    <Container>
+    <Container fluid>
       <header>
       <Row md = "1"><Header/></Row>
       </header>
