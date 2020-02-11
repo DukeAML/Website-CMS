@@ -14,6 +14,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState} from 'react';
 import "./Forms.css";
 import { Container, Row, Col } from 'reactstrap';
+import SearchExistingMembers from './SearchExistingMembers';
+import SearchExistingProjects from './SearchExistingProjects';
+import SearchExistingPapers from './SearchExistingPapers';
+import SearchExistingNews from './SearchExistingNews';
 
 function App() {
   const [key, setKey] = useState('home');
@@ -36,7 +40,7 @@ function App() {
         <Tab eventKey="members" title="Members">
         <Row>
         <Col md = {6} className = "left"><AddMembers/></Col>
-        <Col md = {6} className = "right"><SearchExisting/></Col>
+        <Col md = {6} className = "right"><SearchExistingMembers/></Col>
         </Row>
         </Tab>
 
@@ -44,7 +48,7 @@ function App() {
         <Tab eventKey="projects" title="Projects">
         <Row>
         <Col md = {6} className = "left"><AddProjects/></Col>
-        <Col md = {6} className = "right"><SearchExisting/></Col>
+        <Col md = {6} className = "right"><SearchExistingProjects/></Col>
         </Row>
         </Tab>
         
@@ -52,7 +56,7 @@ function App() {
         <Tab eventKey="papers" title="Papers">
         <Row>
         <Col md = {6} className = "left"><AddPapers/></Col>
-        <Col md = {6} className = "right" ><SearchExisting/></Col>
+        <Col md = {6} className = "right" ><SearchExistingPapers/></Col>
         </Row>
         </Tab>
 
@@ -60,7 +64,7 @@ function App() {
         <Tab eventKey="news" title="DAML News">
         <Row>
         <Col md = {6} className = "left"><AddDnews/></Col>
-        <Col md = {6} className = "right" ><SearchExisting/></Col>
+        <Col md = {6} className = "right" ><SearchExistingNews/></Col>
         </Row>
         </Tab>
 
