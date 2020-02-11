@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     
   
@@ -82,4 +83,90 @@ td {
         background-color: red
     }
 
+=======
+* {
+    
+  
+    color: #F0EFF5;
+    font-family: Noto Sans;
+   
+    
+}
+
+
+.damllogoh{
+    float:left;
+}
+
+.home{
+    text-align: center;
+}
+
+.header, .footer {
+    padding-bottom: 45px;
+    padding-top: 10px;
+    box-sizing: border-box;
+    background-color: #1e2c3a;
+    padding-left: 0.1%;
+}
+
+.footer{
+    text-align: center;
+}
+
+ .body {
+    box-sizing: border-box;
+    height: 100%;
+    padding-left: 0.5%;
+    padding-bottom: 10px;
+    background-color: #2B3E50;
+}
+
+.members, .home, .papers, .projects{
+    box-sizing: border-box;
+    padding-bottom: 100%;
+    
+}
+
+.tab {
+    color: red !important;
+    
+}
+
+.tableb {
+    background-color: whitesmoke;
+    overflow-y: scroll;
+}
+
+td {
+    color: black;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+    display: block;
+    }
+
+    .left {
+        padding-left: 3%;
+    }
+
+    .right {
+        padding-right: 3%;
+    }
+
+    .left, .right {
+        padding-top: 0%;
+    }
+
+    .body {
+        font-family: Georgia, Times, 'Times New Roman', serif;
+    }
+
+>>>>>>> 2ecf5fa422e3221134c5b32fd35729e1ecf0e2cb
     

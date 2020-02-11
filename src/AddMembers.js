@@ -1,10 +1,21 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import axios from 'axios';
 
 const AddMembers = (props) => {
   function logsomething() {
     console.log(document.getElementById("form"));
 }
+
+const testing = axios.get('https://dukeappml.herokuapp.com//users') 
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+
   
   
   return (
@@ -42,7 +53,7 @@ const AddMembers = (props) => {
         <Input type="file" name="CoverPhoto" id="CoverPhoto" />
       </FormGroup>
                   {/*Form Submit Button*/}
-      <Button  onSubmit={logsomething}>Add Member</Button>
+      <Button  onSubmit={testing}>Add Member</Button>
 
     </Form>
     </div>
