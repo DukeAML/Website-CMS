@@ -1,6 +1,6 @@
 * {
   color: #f0eff5;
-  font-family: Noto Sans;
+  font-family: "Roboto", sans-serif;
 }
 
 .damllogoh {
@@ -112,6 +112,7 @@ td {
   padding-left: 0.5%;
   padding-bottom: 10px;
   background-color: #2b3e50;
+  font-family: "Roboto", sans-serif;
 }
 
 .members,
