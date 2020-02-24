@@ -3,6 +3,17 @@ import {useState} from 'react';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import Table from 'react-bootstrap/Table';
 import "./Forms.css";
+import PaginateMembers from "./PaginateMembers.js";
+
+  
+
+
+
+
+
+
+
+  
 
 
 const SearchExistingMembers = (props) => {
@@ -30,6 +41,22 @@ const SearchExistingMembers = (props) => {
     <Table striped bordered hover responsive >
   
   <tbody className= "tableb">
+    
+
+   
+  
+      
+
+
+
+    <PaginateMembers/>
+  
+
+
+
+
+
+    
     <tr>
       <td>1</td>
       <td>Wyatt</td>
