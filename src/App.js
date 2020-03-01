@@ -1,12 +1,12 @@
 import React from 'react';
-import AddMembers from './AddMembers';
-import AddPapers from './AddPapers';
-import AddProjects from './AddProjects';
+import AddMembers from './Members/AddMembers';
+import AddPapers from './Papers/AddPapers';
+import AddProjects from './Projects/AddProjects';
 import LandingPage from './LandingPage';
-import SearchExisting from './SearchExisting';
+
 import Header from './Header';
 import Footer from './Footer';
-import AddDnews from './AddDnews';
+import AddDnews from './News/AddDnews';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 
@@ -14,10 +14,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState} from 'react';
 import "./Forms.css";
 import { Container, Row, Col } from 'reactstrap';
-import SearchExistingMembers from './SearchExistingMembers';
-import SearchExistingProjects from './SearchExistingProjects';
-import SearchExistingPapers from './SearchExistingPapers';
-import SearchExistingNews from './SearchExistingNews';
+import SearchExistingMembers from './Members/SearchExistingMembers';
+import SearchExistingProjects from './Projects/SearchExistingProjects';
+import SearchExistingPapers from './Papers/SearchExistingPapers';
+import SearchExistingNews from './News/SearchExistingNews';
 
 function App() {
   const [key, setKey] = useState('home');

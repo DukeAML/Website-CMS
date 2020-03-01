@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import './Forms.css';
+import '../Forms.css';
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
 

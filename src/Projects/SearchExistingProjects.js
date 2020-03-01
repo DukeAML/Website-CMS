@@ -2,7 +2,8 @@ import React from 'react';
 import {useState} from 'react';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import Table from 'react-bootstrap/Table';
-import "./Forms.css";
+import "../Forms.css";
+import PaginateProjects from "./PaginateProjects";
 
 
 const SearchExistingNews = (props) => {
@@ -30,7 +31,8 @@ const SearchExistingNews = (props) => {
     <Table striped bordered hover responsive >
   
   <tbody className= "tableb">
-    <tr>
+    <PaginateProjects/>
+    {/* <tr>
       <td>1</td>
       <td>VR Sickness</td>
       <td>Predicting virtual reality sickness through the use of artificial intelligence.</td>
@@ -70,7 +72,7 @@ const SearchExistingNews = (props) => {
       <td>9</td>
       <td >Duke Health Safety Bot</td>
       <td>Duke Health System wants a better way to filter emergency messages from less urgent ones.</td>
-    </tr>
+    </tr> */}
   </tbody>
 </Table>
 </div>
