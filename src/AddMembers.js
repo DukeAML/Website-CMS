@@ -7,16 +7,14 @@ const AddMembers = (props) => {
     console.log(document.getElementById("form"));
 }
 
-const testing = axios.get('https://dukeappml.herokuapp.com//users') 
+/* const testing = axios.get('https://dukeappml.herokuapp.com//users') 
   .then(function (response) {
     console.log(response);
   })
   .catch(function (error) {
     console.log(error);
-  });
+  }); */
 
-
-  
   
   return (
     <div className = "members">
@@ -53,7 +51,7 @@ const testing = axios.get('https://dukeappml.herokuapp.com//users')
         <Input type="file" name="CoverPhoto" id="CoverPhoto" />
       </FormGroup>
                   {/*Form Submit Button*/}
-      <Button  onSubmit={testing}>Add Member</Button>
+      <Button  onSubmit>Add Member</Button>
 
     </Form>
     </div>
