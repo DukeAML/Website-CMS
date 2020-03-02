@@ -25,6 +25,16 @@ export default class PaginatePapers extends React.Component{
 
     getJSX = () => {
         var array = [];
+        array.push(
+            <thead>
+                <tr >
+                <th>#</th>
+                <th>Title</th>
+                <th>Description</th>
+                
+                </tr>
+            </thead>
+        );
         if (this.state.members.length > 0){
         for(let i = 0;i<this.state.members.length;i++){
             array.push(

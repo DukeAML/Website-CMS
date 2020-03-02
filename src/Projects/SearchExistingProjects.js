@@ -18,14 +18,7 @@ const SearchExistingNews = (props) => {
     
     <div className = "table-wrapper-scroll-y my-custom-scrollbar" >
     <Table striped bordered hover responsive className ="" >
-    <thead>
-    <tr >
-      <th>#</th>
-      <th>Title</th>
-      <th>Description</th>
-     
-    </tr>
-  </thead>
+    
   <tbody className= "tableb">
   
     <PaginateProjects/>
