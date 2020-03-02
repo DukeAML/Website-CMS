@@ -51,7 +51,7 @@ const AddMembers = (props) => {
         <Input type="file" name="CoverPhoto" id="CoverPhoto" />
       </FormGroup>
                   {/*Form Submit Button*/}
-      <Button  onSubmit>Add Member</Button>
+      <Button  >Add Member</Button>
 
     </Form>
     </div>

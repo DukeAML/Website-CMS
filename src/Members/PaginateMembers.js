@@ -29,7 +29,7 @@ export default class PaginateMembers extends React.Component{
         for(let i = 0;i<this.state.members.length;i++){
             array.push(
                 
-                <tr>
+                <tr onClick = {console.log("yeetyah")}>
                 <td>{i+1}</td>
                 <td> {this.state.members[i].firstName} </td>
                 <td>{this.state.members[i].lastName}</td>
