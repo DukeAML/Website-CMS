@@ -15,7 +15,9 @@ const SearchExistingNews = (props) => {
   return (
     <div >
     <h1>Search Existing Projects</h1>
-    <Table striped bordered hover responsive>
+    
+    <div className = "table-wrapper-scroll-y my-custom-scrollbar" >
+    <Table striped bordered hover responsive className ="" >
     <thead>
     <tr >
       <th>#</th>
@@ -24,13 +26,8 @@ const SearchExistingNews = (props) => {
      
     </tr>
   </thead>
-
-  
-    </Table>
-    <div className = "table-wrapper-scroll-y my-custom-scrollbar" >
-    <Table striped bordered hover responsive >
-  
   <tbody className= "tableb">
+  
     <PaginateProjects/>
     {/* <tr>
       <td>1</td>

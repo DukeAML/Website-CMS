@@ -131,7 +131,11 @@ td {
   background-color: whitesmoke;
   overflow-y: scroll;
 }
-
+th {
+  color: black;
+  font-weight: bold;
+  background-color: rgb(74, 76, 77);
+}
 td {
   color: black;
 }

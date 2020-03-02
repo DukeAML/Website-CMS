@@ -14,21 +14,18 @@ const SearchExistingMembers = (props) => {
   return (
     <div >
     <h1>Search Existing Members</h1>
-    <Table striped bordered hover responsive>
+    
+    <div className = "table-wrapper-scroll-y my-custom-scrollbar" >  
+    
+    <Table striped bordered hover responsive >
     <thead>
-    <tr>
+    <tr >
       <th>#</th>
       <th>First Name</th>
       <th>Last Name</th>
     </tr>
   </thead>
-
-  
-    </Table>
-    <div className = "table-wrapper-scroll-y my-custom-scrollbar" >  
-    
-    <Table className = "tableb">
-      <tbody>
+      <tbody className = "tableb">
         <PaginateMembers/>    
       </tbody>
     </Table>
