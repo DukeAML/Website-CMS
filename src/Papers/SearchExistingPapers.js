@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState} from 'react';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+
 import Table from 'react-bootstrap/Table';
 import "../Forms.css";
 import PaginatePapers from "./PaginatePapers.js";
