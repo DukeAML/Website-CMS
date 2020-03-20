@@ -1,280 +1,92 @@
 import React from 'react';
-import {useState} from 'react';
-
 import Table from 'react-bootstrap/Table';
 import "../Forms.css";
+import axios from "axios";
 
 
-const SearchExistingPapers = (props) => {
+export default class SearchExistingNews extends React.Component {
 
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  state = {
+    members: []
+};
 
-  const toggle = () => setDropdownOpen(prevState => !prevState);
 
-  return (
-    <div >
-    <h1>Search Existing News</h1>
-    
-    <div className = "table-wrapper-scroll-y my-custom-scrollbar" >
-    <Table striped bordered hover responsive >
-    <thead>
-    <tr >
-      <th>#</th>
-      <th>Title</th>
-      <th>Description</th>
-     
-    </tr>
-  </thead>
-  <tbody className= "tableb">
-    <tr>
-      <td>1</td>
-      <td>Wyatt</td>
-      <td>Focht</td>
-    </tr>
-    <tr >
-      <td>2</td>
-      <td>Ryan</td>
-      <td>Middlemiss</td>
-     
-    </tr>
-    <tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr>
-    <tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr><tr >
-      <td>3</td>
-      <td >Yasa</td>
-      <td>Truitt</td>
-    </tr>
-  </tbody>
-</Table>
-</div>
-    </div>
-  );
+componentDidMount() {
+    this.getMembers();
 }
 
-export default SearchExistingPapers;
+getMembers =  async () => {
+    var members = []
+    let response = await axios.get('https://dukeappml.herokuapp.com//users')
+    this.setState({members: response.data}) 
+    console.log("successsssss");     
+    console.log(response);       
+
+};
+
+getJSX = () => {
+    var array = [];
+    array.push(
+      <thead>
+      <tr>
+  <th>#</th>
+  <th>Title</th>
+  <th>Description</th>
+  </tr>
+  </thead>
+    );
+    if (this.state.members.length > 0){
+    for(let i = 0;i<this.state.members.length;i++){
+        array.push(
+            
+            <tr onClick = {console.log("yeetyah")}>
+            
+            <td>{i+1}</td>
+            <td> {this.state.members[i].firstName} </td>
+            <td>{this.state.members[i].lastName}</td>
+            </tr>
+
+
+        );
+    }
+}
+    
+    return(
+        <Table>{array}</Table>
+    );
+  
+};
+
+
+
+render() {
+return(
+<div>
+<h1>Search Existing News</h1>
+
+<div className = "table-wrapper-scroll-y my-custom-scrollbar" >  
+{/*beginning of table*/}
+<Table striped bordered hover responsive >
+  {/*header of table*/}
+
+  {/*end of header of table*/}
+
+  {/*body of table with content from axios*/}
+  <tbody className = "tableb">
+  <div>
+    {this.getJSX()}
+    </div>   
+  </tbody>
+  {/*end body of table with content from axios*/}
+</Table>
+
+  
+</div>
+</div>
+);
+}
+
+}
 
 
 

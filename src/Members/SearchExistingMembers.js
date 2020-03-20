@@ -3,12 +3,12 @@ import {useState} from 'react';
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
 import "../Forms.css";
-import PaginateMembers from "./PaginateMembers.js";
+
 
 export default class SearchExistingMembers extends React.Component {
 
       state = {
-        members: []
+        members: this.props.members
     };
 
 
@@ -16,14 +16,18 @@ export default class SearchExistingMembers extends React.Component {
         this.getMembers();
     }
 
-    getMembers =  async () => {
-        var members = []
+    
+        
+      getMembers =  async () => {
+        
         let response = await axios.get('https://dukeappml.herokuapp.com//users')
         this.setState({members: response.data}) 
         console.log("successsssss");     
-        console.log(response);       
-
+        console.log(this.state.members);       
+        this.forceUpdate();
     };
+
+    
 
     getJSX = () => {
         var array = [];
@@ -40,7 +44,7 @@ export default class SearchExistingMembers extends React.Component {
         for(let i = 0;i<this.state.members.length;i++){
             array.push(
                 
-                <tr onClick = {console.log("yeetyah")}>
+                <tr onClick >
                 
                 <td>{i+1}</td>
                 <td> {this.state.members[i].firstName} </td>

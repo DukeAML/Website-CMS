@@ -19,8 +19,13 @@ import SearchExistingProjects from './Projects/SearchExistingProjects';
 import SearchExistingPapers from './Papers/SearchExistingPapers';
 import SearchExistingNews from './News/SearchExistingNews';
 
+import PassMembers from "./Members/PassMembers";
+
 function App() {
   const [key, setKey] = useState('home');
+  
+
+  
  
   return (
     <Container fluid >
@@ -39,8 +44,7 @@ function App() {
         {/*Members Page*/}
         <Tab eventKey="members" title="Members">
         <Row>
-        <Col md = {6} className = "left"><AddMembers/></Col>
-        <Col md = {6} className = "right"><SearchExistingMembers/></Col>
+        <PassMembers/>
         </Row>
         </Tab>
 
