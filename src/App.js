@@ -14,7 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState} from 'react';
 import "./Forms.css";
 import { Container, Row, Col } from 'reactstrap';
-import SearchExistingMembers from './Members/SearchExistingMembers';
+
 import SearchExistingProjects from './Projects/SearchExistingProjects';
 import SearchExistingPapers from './Papers/SearchExistingPapers';
 import SearchExistingNews from './News/SearchExistingNews';
@@ -43,9 +43,9 @@ function App() {
 
         {/*Members Page*/}
         <Tab eventKey="members" title="Members">
-        <Row>
+        
         <PassMembers/>
-        </Row>
+        
         </Tab>
 
         {/*Projects Page*/}
