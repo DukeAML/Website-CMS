@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
 import { Container, Row, Col } from 'reactstrap';
@@ -23,14 +23,15 @@ export default class AddMembers extends React.Component {
     currentphotoString: "",
     currentlinkedIn: "",
     currentbiography: "",
-    currentuid: ""
+    currentuid: "",
+    currentbutton: ""
 	
 };
 
 
 componentDidMount() {
     this.getMembers();
-    this.correctSubmitButton();
+    
 }
 
 
@@ -60,12 +61,26 @@ postMembers =  async (event) => {
       photoString: event.target[8].value
     };
   //console.log(mem);
-  let response = await axios.post('https://dukeappml.herokuapp.com//user/new', mem);
-  console.log(response);
-  //console.log("posted");
+  await axios.post('https://dukeappml.herokuapp.com//user/new', mem);
+  
 
-         
-  this.forceUpdate();
+  //window.location.reload(false);
+  this.setState({currentfirstName: ""});
+  this.setState({currentlastName: ""});
+  this.setState({currentteam: ""});
+  this.setState({currentmajor: ""});
+  this.setState({currentschool: ""});
+  this.setState({currentgithublink: ""});
+  this.setState({currentnetID: ""});
+  this.setState({currentpassword: ""});
+  console.log("reached");
+  this.setState({currentgraduationYear: ""});
+  this.setState({currentphotoString: ""});
+  this.setState({currentbiography: ""});
+  this.setState({currentuid: ""});
+
+  
+  
 };
 
 updateMembers =  async (event) => {
@@ -87,10 +102,35 @@ updateMembers =  async (event) => {
 
 let URL = 'https://dukeappml.herokuapp.com//user/' + this.state.currentuid;
 let response = await axios.put(URL, mem);
+this.setState({currentfirstName: ""});
+  this.setState({currentlastName: ""});
+  this.setState({currentteam: ""});
+  this.setState({currentmajor: ""});
+  this.setState({currentschool: ""});
+  this.setState({currentgithublink: ""});
+  this.setState({currentnetID: ""});
+  this.setState({currentpassword: ""});
+  this.setState({currentgraduationYear: ""});
+  this.setState({currentphotoString: ""});
+  this.setState({currentbiography: ""});
+  this.setState({currentuid: ""});
 //console.log(response);
 //console.log("posted");
 
        
+  
+
+  //window.location.reload(false);
+};
+
+deleteMembers = async (event) => {
+  event.preventDefault();
+ 
+  //console.log(this.state.currentuid);
+  let URL = 'https://dukeappml.herokuapp.com//user/' + this.state.currentuid;
+   await axios.delete(URL);
+  //console.log(response);
+  //window.location.reload(false);
   this.setState({currentfirstName: ""});
   this.setState({currentlastName: ""});
   this.setState({currentteam: ""});
@@ -103,15 +143,6 @@ let response = await axios.put(URL, mem);
   this.setState({currentphotoString: ""});
   this.setState({currentbiography: ""});
   this.setState({currentuid: ""});
-};
-
-deleteMembers = async (event) => {
-  event.preventDefault();
- 
-  console.log(this.state.currentuid);
-  let URL = 'https://dukeappml.herokuapp.com//user/' + this.state.currentuid;
-   await axios.delete(URL);
-  //console.log(response);
 }
 
 updateDefaultValues = (i) => {
@@ -169,48 +200,52 @@ getJSX = () => {
 
 };
 
-correctSubmitButton(){
+/* correctSubmitButton(){
   if (this.state.currentuid === ""){
   return(
     
-      <Button onClick = {this.postMembers}>Add Member</Button>
+      <Button onClick = {this.setState({currentbutton: "post"})}>Add Member</Button>
       
   );}
   else
     return(
       <Row>
         <Col>
-      <Button >Edit Member</Button>
+      <Button onClick = {this.setState({currentbutton: "put"})}>Edit Member</Button>
         </Col>
         
         <Col>
-      <Button onClick = {this.deleteMembers}>Delete Member</Button>
+      <Button onClick = {this.setState({currentbutton: "deleted"})}>Delete Member</Button>
         </Col>
       </Row>
     );
-}
+} */
 
-correctSubmitMethod(event){
+ correctSubmitMethod = (event) => {
   
 event.preventDefault();
-
-
-  console.log("happened");
-  let post = "this.postMembers";
-  let update = "{this.updateMembers}";
-  let deleted = "this.postMembers";
- 
-  if ("" === ""){
-  return(
-    
-      update
-      
-  );}
-  else
-    return(
-      update
-    );
+console.log("correctsubmit");
+let type = this.state.currentbutton;
+if (type === "post"){
+  this.postMembers(event);
 }
+else if (type === "put"){
+  this.updateMembers(event);
+}
+else if (type === "deleted"){
+  this.deleteMembers(event);
+}
+
+this.setState({currentbutton: ""});
+this.getMembers();
+
+
+
+} 
+
+  handleOptionChange = (event) => { 
+    this.setState({currentbutton: event.target.value});
+  }
 
 
 
@@ -274,10 +309,12 @@ event.preventDefault();
         <Label for="CoverPhoto">Cover Photo </Label>
         <Input type="text" name="coverphotoM" id="CoverPhoto" defaultValue = {this.state.currentphotoString}/>
       </FormGroup>
+      
+      
                   {/*Form Submit Button*/}
       <Row>
         <Col>
-        {this.correctSubmitButton()}
+        <Button>Submit</Button>
       </Col>
 
       </Row>
@@ -310,6 +347,33 @@ event.preventDefault();
 
     </div>
     </div>
+
+
+    <legend>Add, Edit, or Delete a Member</legend>
+                 {/*File input for Type of Action*/}
+        <FormGroup>
+        <Label for="CoverPhoto">
+        <Input type="radio" name="typeM" id="AddUpdateDelete" value = "post" onChange = {this.handleOptionChange} />
+          Add 
+        </Label>
+        
+      </FormGroup>
+      {/*File input for Type of Action*/}
+      <FormGroup>
+      <Label for="CoverPhoto">
+      <Input type="radio" name="typeM" id="AddUpdateDelete" value = "put" onChange = {this.handleOptionChange} />
+        Edit 
+      </Label>
+      
+    </FormGroup>
+        {/*File input for Type of Action*/}
+        <FormGroup>
+        <Label for="CoverPhoto">
+        <Input type="radio" name="typeM" id="AddUpdateDelete" value = "deleted" onChange = {this.handleOptionChange} />
+          Delete 
+          </Label>
+        
+      </FormGroup>
     </Col>
     </Row>
 
