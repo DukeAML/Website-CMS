@@ -66,7 +66,7 @@ postPapers =  async (event) => {
   this.setState({currenturl: ""});
   this.setState({currentuid: ""});
 
-  
+  window.location.reload();
   
 };
 
@@ -95,7 +95,7 @@ let response = await axios.put(URL, pap);
   this.setState({currentuid: ""});
 
        
-  
+  window.location.reload();
 
   //window.location.reload(false);
 };
@@ -117,6 +117,7 @@ deletePapers = async (event) => {
   this.setState({currentdoi: ""});
   this.setState({currenturl: ""});
   this.setState({currentuid: ""});
+  window.location.reload();
 }
 
 updateDefaultValues = (i) => {
@@ -195,6 +196,17 @@ getJSX = () => {
 
   handleOptionChange = (event) => { 
     this.setState({currentbutton: event.target.value});
+    if (event.target.value === "clear"){
+      this.setState({currentabstract: ""});
+      this.setState({currenttitle: ""});
+      this.setState({currentauthorLastName: ""});
+      this.setState({currentauthorFirstName: ""});
+      this.setState({currentpublicationDate: ""});
+      this.setState({currentgithublink: ""});
+      this.setState({currentdoi: ""});
+      this.setState({currenturl: ""});
+      this.setState({currentuid: ""});
+    }
   }
 
 
@@ -316,6 +328,15 @@ getJSX = () => {
         <Label for="deleted">
         <Input type="radio" name="typeM" id="AddUpdateDelete" value = "deleted" onChange = {this.handleOptionChange} />
           Delete 
+          </Label>
+        
+      </FormGroup>
+
+       {/*File input for Type of Action*/}
+       <FormGroup>
+        <Label for="CoverPhoto">
+        <Input type="radio" name="typeM" id="AddUpdateDelete" value = "clear" onChange = {this.handleOptionChange} />
+          Clear Entries 
           </Label>
         
       </FormGroup>

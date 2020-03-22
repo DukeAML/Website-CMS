@@ -78,7 +78,7 @@ postMembers =  async (event) => {
   this.setState({currentphotoString: ""});
   this.setState({currentbiography: ""});
   this.setState({currentuid: ""});
-
+  window.location.reload();
   
   
 };
@@ -118,9 +118,9 @@ this.setState({currentfirstName: ""});
 //console.log("posted");
 
        
-  
+window.location.reload();
 
-  //window.location.reload(false);
+  
 };
 
 deleteMembers = async (event) => {
@@ -143,6 +143,8 @@ deleteMembers = async (event) => {
   this.setState({currentphotoString: ""});
   this.setState({currentbiography: ""});
   this.setState({currentuid: ""});
+
+  window.location.reload();
 }
 
 updateDefaultValues = (i) => {
@@ -241,11 +243,26 @@ this.getMembers();
 
 
 
+
 } 
 
   handleOptionChange = (event) => { 
     this.setState({currentbutton: event.target.value});
+    if (event.target.value === "clear"){
+      this.setState({currentfirstName: ""});
+      this.setState({currentlastName: ""});
+      this.setState({currentteam: ""});
+      this.setState({currentmajor: ""});
+      this.setState({currentschool: ""});
+      this.setState({currentgithublink: ""});
+      this.setState({currentnetID: ""});
+      this.setState({currentpassword: ""});
+      this.setState({currentgraduationYear: ""});
+      this.setState({currentphotoString: ""});
+      this.setState({currentbiography: ""});
+      this.setState({currentuid: ""});
   }
+}
 
 
 
@@ -371,6 +388,15 @@ this.getMembers();
         <Label for="CoverPhoto">
         <Input type="radio" name="typeM" id="AddUpdateDelete" value = "deleted" onChange = {this.handleOptionChange} />
           Delete 
+          </Label>
+        
+      </FormGroup>
+
+       {/*File input for Type of Action*/}
+       <FormGroup>
+        <Label for="CoverPhoto">
+        <Input type="radio" name="typeM" id="AddUpdateDelete" value = "clear" onChange = {this.handleOptionChange} />
+          Clear Entries 
           </Label>
         
       </FormGroup>

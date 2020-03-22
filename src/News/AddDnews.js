@@ -53,8 +53,8 @@ postNews =  async (event) => {
       imageLink: event.target[7].value
     };
   //console.log(mem);
-  await axios.post('https://dukeappml.herokuapp.com//newentry/new', news);
-  
+  let response = await axios.post('https://dukeappml.herokuapp.com//newsentry/new', news);
+  //console.log(response);
 
   //window.location.reload(false);
   this.setState({currenttitle: ""});
@@ -66,7 +66,7 @@ postNews =  async (event) => {
   this.setState({currentbody: ""});
   this.setState({currentimageLink: ""});
   this.setState({currentuid: ""});
-
+  window.location.reload();
   
   
 };
@@ -86,6 +86,7 @@ updateNews =  async (event) => {
 
 let URL = 'https://dukeappml.herokuapp.com//newsentry/' + this.state.currentuid;
 let response = await axios.put(URL, news);
+//console.log(response);
   this.setState({currenttitle: ""});
   this.setState({currentdescription: ""});
   this.setState({currentsubtitle: ""});
@@ -98,7 +99,7 @@ let response = await axios.put(URL, news);
 //console.log(response);
 //console.log("posted");
 
-       
+window.location.reload();
   
 
   //window.location.reload(false);
@@ -109,7 +110,8 @@ deleteNews = async (event) => {
  
   //console.log(this.state.currentuid);
   let URL = 'https://dukeappml.herokuapp.com//newsentry/' + this.state.currentuid;
-   await axios.delete(URL);
+  let response = await axios.delete(URL);
+  console.log(response);
   //console.log(response);
   //window.location.reload(false);
   this.setState({currenttitle: ""});
@@ -121,19 +123,21 @@ deleteNews = async (event) => {
   this.setState({currentbody: ""});
   this.setState({currentimageLink: ""});
   this.setState({currentuid: ""});
+
+  window.location.reload();
 }
 
 updateDefaultValues = (i) => {
   //console.log("clicked");
   
-  this.setState({currenttitle: this.state.members[i].firstName});
-  this.setState({currentdescription: this.state.members[i].lastName});
-  this.setState({currentsubtitle: this.state.members[i].team});
-  this.setState({currentauthorFirstName: this.state.members[i].major});
-  this.setState({currentauthorLastName: this.state.members[i].school});
-  this.setState({currentpublicationDate: this.state.members[i].githublink});
-  this.setState({currentbody: this.state.members[i].netID});
-  this.setState({currentimageLink: this.state.members[i].password});
+  this.setState({currenttitle: this.state.members[i].title});
+  this.setState({currentdescription: this.state.members[i].description});
+  this.setState({currentsubtitle: this.state.members[i].subtitle});
+  this.setState({currentauthorFirstName: this.state.members[i].authorFirstName});
+  this.setState({currentauthorLastName: this.state.members[i].authorLastName});
+  this.setState({currentpublicationDate: this.state.members[i].publicationDate});
+  this.setState({currentbody: this.state.members[i].body});
+  this.setState({currentimageLink: this.state.members[i].imageLink});
   this.setState({currentuid: this.state.members[i].uid});
   
 
@@ -200,6 +204,17 @@ getJSX = () => {
 
   handleOptionChange = (event) => { 
     this.setState({currentbutton: event.target.value});
+    if (event.target.value === "clear"){
+      this.setState({currenttitle: ""});
+      this.setState({currentdescription: ""});
+      this.setState({currentsubtitle: ""});
+      this.setState({currentauthorFirstName: ""});
+      this.setState({currentauthorLastName: ""});
+      this.setState({currentpublicationDate: ""});
+      this.setState({currentbody: ""});
+      this.setState({currentimageLink: ""});
+      this.setState({currentuid: ""});
+    }
   }
 
 
@@ -331,6 +346,17 @@ getJSX = () => {
         <Label for="CoverPhoto">
         <Input type="radio" name="typeM" id="AddUpdateDelete" value = "deleted" onChange = {this.handleOptionChange} />
           Delete 
+          </Label>
+        
+      </FormGroup>
+
+
+     
+        {/*File input for Type of Action*/}
+        <FormGroup>
+        <Label for="CoverPhoto">
+        <Input type="radio" name="typeM" id="AddUpdateDelete" value = "clear" onChange = {this.handleOptionChange} />
+          Clear Entries 
           </Label>
         
       </FormGroup>

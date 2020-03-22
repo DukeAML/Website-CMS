@@ -49,7 +49,8 @@ postProjects =  async (event) => {
       abstract: event.target[3].value
     };
   //console.log(mem);
-  await axios.post('https://dukeappml.herokuapp.com//user/new', pro);
+  let response = await axios.post('https://dukeappml.herokuapp.com//project/new', pro);
+  console.log(response);
   
 
   //window.location.reload(false);
@@ -61,7 +62,7 @@ postProjects =  async (event) => {
   this.setState({currentabstract: ""});
   this.setState({currentuid: ""});
 
-  
+  window.location.reload();
   
 };
 
@@ -89,7 +90,7 @@ let response = await axios.put(URL, pro);
 //console.log("posted");
 
        
-  
+window.location.reload();
 
   //window.location.reload(false);
 };
@@ -109,6 +110,8 @@ deleteProjects = async (event) => {
   this.setState({currentimageLink: ""});
   this.setState({currentabstract: ""});
   this.setState({currentuid: ""});
+
+  window.location.reload();
 }
 
 updateDefaultValues = (i) => {
@@ -187,6 +190,17 @@ getJSX = () => {
 
   handleOptionChange = (event) => { 
     this.setState({currentbutton: event.target.value});
+    if (event.target.value === "clear"){
+      this.setState({currenttitle: ""});
+      this.setState({currentdescription: ""});
+      this.setState({currentsubmitter: ""});
+      this.setState({currentsubmitterEmail: ""});
+      this.setState({currentimageLink: ""});
+      this.setState({currentabstract: ""});
+      this.setState({currentuid: ""});
+
+
+    }
   }
 
 
@@ -291,6 +305,15 @@ getJSX = () => {
         <Label for="CoverPhoto">
         <Input type="radio" name="typeM" id="AddUpdateDelete" value = "deleted" onChange = {this.handleOptionChange} />
           Delete 
+          </Label>
+        
+      </FormGroup>
+
+       {/*File input for Type of Action*/}
+       <FormGroup>
+        <Label for="CoverPhoto">
+        <Input type="radio" name="typeM" id="AddUpdateDelete" value = "clear" onChange = {this.handleOptionChange} />
+          Clear Entries 
           </Label>
         
       </FormGroup>
