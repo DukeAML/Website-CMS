@@ -73,7 +73,7 @@ postMembers =  async (event) => {
   this.setState({currentgithublink: ""});
   this.setState({currentnetID: ""});
   this.setState({currentpassword: ""});
-  console.log("reached");
+  //console.log("reached");
   this.setState({currentgraduationYear: ""});
   this.setState({currentphotoString: ""});
   this.setState({currentbiography: ""});
@@ -146,7 +146,7 @@ deleteMembers = async (event) => {
 }
 
 updateDefaultValues = (i) => {
-  console.log("clicked");
+  //console.log("clicked");
   
   this.setState({currentfirstName: this.state.members[i].firstName});
   this.setState({currentlastName: this.state.members[i].lastName});
@@ -224,7 +224,7 @@ getJSX = () => {
  correctSubmitMethod = (event) => {
   
 event.preventDefault();
-console.log("correctsubmit");
+//console.log("correctsubmit");
 let type = this.state.currentbutton;
 if (type === "post"){
   this.postMembers(event);
@@ -307,7 +307,7 @@ this.getMembers();
                   {/*File input for Cover Photo*/}
       <FormGroup>
         <Label for="CoverPhoto">Cover Photo </Label>
-        <Input type="text" name="coverphotoM" id="CoverPhoto" defaultValue = {this.state.currentphotoString}/>
+        <Input type="text" name="coverphotoM" id="CoverPhoto" placeholder = "instagram.com/wyfocht/hotBeachPicture" defaultValue = {this.state.currentphotoString}/>
       </FormGroup>
       
       
