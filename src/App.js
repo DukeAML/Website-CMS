@@ -29,6 +29,10 @@ function App() {
   
  
   return (
+    <div>
+    <head>
+      <title>DAML CMS</title>
+    </head>
     <Container fluid >
       <header>
       <Row md = "1"><Header/></Row>
@@ -82,6 +86,7 @@ function App() {
       </footer>
       </Row>
     </Container>
+    </div>
   );
 }
 

@@ -78,6 +78,7 @@ td {
 
 .left {
   padding-left: 3%;
+  
 }
 
 .right {
@@ -141,6 +142,8 @@ td {
 
 .tab {
   color: red !important;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .tableb {

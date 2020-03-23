@@ -19,6 +19,10 @@ const LandingPage = (props) => {
      </h5>
      <br/>
      <h1>Regardless, you've come to the right place!</h1>
+
+
+     
+     
     </div>
   );
 }
