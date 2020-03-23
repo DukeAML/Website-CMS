@@ -279,7 +279,7 @@ this.getMembers();
         <Col  md = {6} className = "left">
     <div className = "members">
       
-    <h1>Add New Member </h1>
+    <h1 className >Add New Member </h1>
     <Form id = "form" onSubmit = {this.correctSubmitMethod}>
             {/*Text input for First Name*/}
       <FormGroup>
@@ -331,7 +331,7 @@ this.getMembers();
                   {/*Form Submit Button*/}
       <Row>
         <Col>
-        <Button>Submit</Button>
+        <Button className="button">Submit</Button>
       </Col>
 
       </Row>

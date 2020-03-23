@@ -287,7 +287,7 @@ getJSX = () => {
                  {/*Form Submit Button*/}
                  <Row>
         <Col>
-        <Button>Submit</Button>
+        <Button className = "button">Submit</Button>
       </Col>
 
       </Row>

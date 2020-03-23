@@ -6,7 +6,7 @@ const Header = (props) => {
   return (
     <div className = "header">
     <a href ="/" ><img alt = "DAML Logo" className = "damllogoh" src={require("./images/whitedaml.png")} width = "150" height = "100" /> </a>
-    <h1>Duke Applied Machine Learning</h1>
+    <h1 style = {{color: "#f2f4f5"}}>Duke Applied Machine Learning</h1>
     </div>
   );
 }

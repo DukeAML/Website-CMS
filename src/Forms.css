@@ -16,8 +16,9 @@
   padding-bottom: 45px;
   padding-top: 10px;
   box-sizing: border-box;
-  background-color: #1e2c3a;
+  background-color: #2b3e50;
   padding-left: 0.1%;
+  
 }
 
 .footer {
@@ -38,6 +39,18 @@
 .projects {
   box-sizing: border-box;
   padding-bottom: 100%;
+  
+}
+.allwords {
+  color: red;
+}
+
+Label, h1, h3, h5, legend {
+  color: rgb(30, 44, 58);
+  font-family: Lora;
+}
+Button, .button {
+  background-color: #2b3e50;
 }
 
 .tab {
@@ -99,7 +112,9 @@ td {
   padding-top: 10px;
   box-sizing: border-box;
   background-color: #1e2c3a;
+  /*background-color: #f2f4f5;*/
   padding-left: 0.1%;
+  color: #f2f4f5 !important;
 }
 
 .footer {
@@ -111,7 +126,8 @@ td {
   height: 100%;
   padding-left: 0.5%;
   padding-bottom: 10px;
-  background-color: #2b3e50;
+ /* background-color: #2b3e50;*/
+  background-color: #f2f4f5;
   font-family: "Roboto", sans-serif;
 }
 
@@ -132,9 +148,9 @@ td {
   overflow-y: scroll;
 }
 th {
-  color: black;
+  color: #f2f4f5;
   font-weight: bold;
-  background-color: rgb(74, 76, 77);
+  background-color: #2b3e50 ;
 }
 td {
   color: black;
