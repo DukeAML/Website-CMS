@@ -61,7 +61,8 @@ postMembers =  async (event) => {
       photoString: event.target[8].value
     };
   //console.log(mem);
-  await axios.post('https://dukeappml.herokuapp.com//user/new', mem);
+  let response = await axios.post('https://dukeappml.herokuapp.com//user/new', mem);
+  console.log(response);
   
 
   //window.location.reload(false);
@@ -114,8 +115,8 @@ this.setState({currentfirstName: ""});
   this.setState({currentphotoString: ""});
   this.setState({currentbiography: ""});
   this.setState({currentuid: ""});
-//console.log(response);
-//console.log("posted");
+console.log(response);
+//console.log("successful update");
 
        
 window.location.reload();
@@ -128,7 +129,7 @@ deleteMembers = async (event) => {
  
   //console.log(this.state.currentuid);
   let URL = 'https://dukeappml.herokuapp.com//user/' + this.state.currentuid;
-   await axios.delete(URL);
+  let response = await axios.delete(URL);
   //console.log(response);
   //window.location.reload(false);
   this.setState({currentfirstName: ""});
@@ -143,6 +144,8 @@ deleteMembers = async (event) => {
   this.setState({currentphotoString: ""});
   this.setState({currentbiography: ""});
   this.setState({currentuid: ""});
+console.log(response);
+  
 
   window.location.reload();
 }
