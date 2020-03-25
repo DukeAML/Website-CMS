@@ -21,11 +21,11 @@ export default class PassMembers extends React.Component {
 
     getMembers =  async () => {
         
-        let response = await axios.get('https://dukeappml.herokuapp.com//users')
+        /* let response = await axios.get('https://dukeappml.herokuapp.com//users')
         this.setState({members: response.data}) 
         console.log("successsssss");     
         console.log(this.state.members);       
-        this.forceUpdate();
+        this.forceUpdate(); */
     };
 
     
