@@ -11,7 +11,7 @@ import Tab from 'react-bootstrap/Tab';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState} from 'react';
 import "./Forms.css";
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row } from 'reactstrap';
 
 
 
@@ -29,10 +29,8 @@ function App() {
   
  
   return (
+  
     <div>
-    <head>
-      <title>DAML CMS</title>
-    </head>
     <Container fluid >
       <header>
       <Row md = "1"><Header/></Row>

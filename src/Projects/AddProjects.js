@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
-import { Container, Row, Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import "../Forms.css";
 
 
@@ -135,7 +135,7 @@ updateDefaultValues = (i) => {
 getJSX = () => {
   var array = [];
   array.push(
-    <thead>
+    <thead key = {"theadprojects"}>
     <tr>
 <th>#</th>
 <th>Title</th>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
-import { Container, Row, Col } from 'reactstrap';
+import {  Row, Col } from 'reactstrap';
 import "../Forms.css";
 
 
@@ -150,7 +150,7 @@ updateDefaultValues = (i) => {
 getJSX = () => {
   var array = [];
   array.push(
-    <thead>
+    <thead key = {"theadnews"}>
     <tr>
 <th>#</th>
 <th>Title</th>
@@ -267,7 +267,7 @@ getJSX = () => {
         <Input
           type="text"
           name="date"
-          id="exampleDate"
+          id="exampleDatenews"
           placeholder="ex. Jan 3, 2000"
           defaultValue = {this.state.currentpublicationDate}
         />
@@ -275,7 +275,7 @@ getJSX = () => {
       {/*Textarea input for body*/}
       <FormGroup>
         <Label for="description">Body </Label>
-        <Input type="text" name="firstname" id="firstnameN" placeholder = "ex. DAML is a revolutionary organization that was founded by a small man with a big dream to..." defaultValue = {this.state.currentbody}/>
+        <Input type="text" name="firstname" id="body" placeholder = "ex. DAML is a revolutionary organization that was founded by a small man with a big dream to..." defaultValue = {this.state.currentbody}/>
       </FormGroup>
 
       {/*File input for Picture*/}

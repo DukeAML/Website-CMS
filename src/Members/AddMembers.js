@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
-import { Container, Row, Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import "../Forms.css";
 
 
@@ -187,11 +187,11 @@ updateDefaultValues = (i) => {
 getJSX = () => {
   var array = [];
   array.push(
-    <thead>
-    <tr>
-<th>#</th>
-<th>First Name</th>
-<th>Last Name</th>
+    <thead key = {"theadmembers"}>
+    <tr >
+<th >#</th>
+<th >First Name</th>
+<th >Last Name</th>
 </tr>
 </thead>
   );
@@ -199,7 +199,7 @@ getJSX = () => {
   for(let i = 0;i<this.state.members.length;i++){
       array.push(
           
-          <tr onClick = {() => this.updateDefaultValues(i)} >
+          <tr  onClick = {() => this.updateDefaultValues(i)} >
           
           <td>{i+1}</td>
           <td> {this.state.members[i].firstName} </td>
@@ -299,7 +299,7 @@ handleTeamChange = (event) => {
         <Col  md = {6} className = "left">
     <div className = "members">
       
-    <h1 className >Add New Member </h1>
+    <h1  >Add New Member </h1>
     <Form id = "form" onSubmit = {this.correctSubmitMethod}>
             {/*Text input for First Name*/}
       <FormGroup>
