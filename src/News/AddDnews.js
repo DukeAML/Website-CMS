@@ -36,6 +36,7 @@ componentDidMount() {
     
     let response = await axios.get('https://dukeappml.herokuapp.com//newsentries');
     this.setState({members: response.data}) ;
+    //console.log(this.state.members);
            
     
 };
@@ -134,7 +135,7 @@ updateDefaultValues = (i) => {
   this.setState({currentdescription: this.state.members[i].description});
   this.setState({currentsubtitle: this.state.members[i].subtitle});
   this.setState({currentauthorFirstName: this.state.members[i].authorFirstName});
-  this.setState({currentauthorLastName: this.state.members[i].authorLastName});
+  this.setState({currentauthorLastName: this.state.members[i].authorlastName});
   this.setState({currentpublicationDate: this.state.members[i].publicationDate});
   this.setState({currentbody: this.state.members[i].body});
   this.setState({currentimageLink: this.state.members[i].imageLink});

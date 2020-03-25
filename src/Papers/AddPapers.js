@@ -36,6 +36,7 @@ componentDidMount() {
     
     let response = await axios.get('https://dukeappml.herokuapp.com/papers');
     this.setState({members: response.data}) ;
+    //console.log(this.state.members);
            
     
 };
@@ -44,11 +45,11 @@ postPapers =  async (event) => {
     event.preventDefault();
     var pap = {
       title: event.target[0].value, 
-      abstract: event.target[1].value, 
-      authorFirstName: event.target[2].value,
-      authorLastName: event.target[3].value,
-      publicationDate: event.target[4].value,
-      doi: event.target[5].value,
+      abstract: event.target[3].value, 
+      authorFirstName: event.target[1].value,
+      authorLastName: event.target[2].value,
+      publicationDate: event.target[5].value,
+      doi: event.target[4].value,
       url: event.target[6].value
     };
   //console.log(mem);
@@ -74,11 +75,11 @@ updatePapers =  async (event) => {
   event.preventDefault();
   var pap = {
       title: event.target[0].value, 
-      abstract: event.target[1].value, 
-      authorFirstName: event.target[2].value,
-      authorLastName: event.target[3].value,
-      publicationDate: event.target[4].value,
-      doi: event.target[5].value,
+      abstract: event.target[3].value, 
+      authorFirstName: event.target[1].value,
+      authorLastName: event.target[2].value,
+      publicationDate: event.target[5].value,
+      doi: event.target[4].value,
       url: event.target[6].value
   };
 
@@ -126,7 +127,7 @@ updateDefaultValues = (i) => {
   this.setState({currenttitle: this.state.members[i].title});
   this.setState({currentabstract: this.state.members[i].abstract});
   this.setState({currentauthorFirstName: this.state.members[i].authorFirstName});
-  this.setState({currentauthorLastName: this.state.members[i].authorLastName});
+  this.setState({currentauthorLastName: this.state.members[i].authorlastName});
   this.setState({currentpublicationDate: this.state.members[i].publicationDate});
   this.setState({currentdoi: this.state.members[i].doi});
   this.setState({currenturl: this.state.members[i].url});
