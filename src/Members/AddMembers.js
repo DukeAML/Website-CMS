@@ -175,6 +175,7 @@ updateDefaultValues = (i) => {
   this.setState({currentgraduationYear: this.state.members[i].graduationYear});
   this.setState({currentphotoString: this.state.members[i].photoString});
   this.setState({currentbiography: this.state.members[i].biography});
+  this.setState({currentlinkedIn: this.state.members[i].linkedIn});
   this.setState({currentuid: this.state.members[i].uid});
   
 
