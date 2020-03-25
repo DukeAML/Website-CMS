@@ -46,6 +46,17 @@ componentDidMount() {
 
 postMembers =  async (event) => {
     event.preventDefault();
+    
+   /*  console.log(event.target[0].value);
+    console.log(event.target[1].value);
+    console.log(event.target[2].value);
+    console.log(event.target[3].value);
+    console.log(event.target[4].value);
+    console.log(event.target[5].value);
+    console.log(event.target[6].value);
+    console.log(event.target[7].value);
+    console.log(event.target[8].value);
+    console.log(event.target[9].value); */
     var mem = {
       firstName: event.target[0].value, 
       lastName: event.target[1].value, 
@@ -53,7 +64,7 @@ postMembers =  async (event) => {
       password: "",
       team: event.target[3].value,
       major: event.target[5].value,
-      biography: "",
+      biography: event.target[9].value,
       graduationYear: "",
       school: event.target[4].value,
       githubLink: event.target[7].value,
@@ -89,16 +100,16 @@ updateMembers =  async (event) => {
   var mem = {
     firstName: event.target[0].value, 
     lastName: event.target[1].value, 
-    netID: "",
+    netID: event.target[2].value,
     password: "",
-    team: event.target[2].value,
-    major: event.target[4].value,
-    biography: "",
+    team: event.target[3].value,
+    major: event.target[5].value,
+    biography: event.target[9].value,
     graduationYear: "",
-    school: event.target[3].value,
-    githubLink: event.target[6].value,
-    linkedIn: event.target[5].value,
-    photoString: event.target[7].value
+    school: event.target[4].value,
+    githubLink: event.target[7].value,
+    linkedIn: event.target[6].value,
+    photoString: event.target[8].value
   };
 
 let URL = 'https://dukeappml.herokuapp.com//user/' + this.state.currentuid;
@@ -267,6 +278,11 @@ this.getMembers();
   }
 }
 
+handleTeamChange = (event) => { 
+  this.setState({currentteam: event.target.value});
+  
+}
+
 
 
   /* remove some above stuff once prop thing is fixed*/
@@ -300,9 +316,13 @@ this.getMembers();
         <Input type="text" name="NetM" id="NetID" placeholder="ex. ola69" defaultValue = {this.state.currentnetID}  />
       </FormGroup>
             {/*Text input for Team Name*/}
-      <FormGroup>
-        <Label for="TeamName">Team </Label>
-        <Input type="text" name="teamM" id="TeamName" placeholder="ex. Software" defaultValue = {this.state.currentteam}  />
+            <FormGroup>
+        <Label for="teamname">Team</Label>
+        <Input type="select" name="select" id="teamname" value = {this.state.currentteam} onChange = {this.handleTeamChange}>
+          <option value = "DS">DS</option>
+          <option value = "PS">PS</option>
+          <option value = "CRM">CRM</option>
+        </Input>
       </FormGroup>
             {/*Text input for School Name*/}
       <FormGroup>
@@ -328,6 +348,11 @@ this.getMembers();
       <FormGroup>
         <Label for="CoverPhoto">Cover Photo </Label>
         <Input type="text" name="coverphotoM" id="CoverPhoto" placeholder = "instagram.com/wyfocht/hotBeachPicture" defaultValue = {this.state.currentphotoString}/>
+      </FormGroup>
+       {/*File input for Cover Photo*/}
+       <FormGroup>
+        <Label for="CoverPhoto">Short Biography </Label>
+        <Input type="textarea" name="bioM" id="shortbio" placeholder = "Yasa Baig is..." defaultValue = {this.state.currentbiography}/>
       </FormGroup>
       
       
