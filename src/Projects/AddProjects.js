@@ -34,7 +34,7 @@ componentDidMount() {
     
     let response = await axios.get('https://dukeappml.herokuapp.com//projects');
     this.setState({members: response.data}) ;
-    console.log(this.state.members);
+    //console.log(this.state.members);
            
     
 };
