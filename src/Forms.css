@@ -45,12 +45,24 @@
   color: red;
 }
 
-Label, h1, h3, h5, legend {
+Label, h1, h3, h5, legend, span {
   color: rgb(30, 44, 58);
   font-family: Lora;
 }
 Button, .button {
   background-color: #2b3e50;
+}
+
+input[type = "text"]{
+  outline-style: solid;
+  outline-color: #2b3e50;
+}
+
+input[type = "file"]{
+  
+  cursor: pointer;
+ 
+  content: "Upload Picture";
 }
 
 .tab {
@@ -186,4 +198,9 @@ td {
 
 .body {
   font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+.fullpage {
+  
+  padding-bottom: 7%;
 }

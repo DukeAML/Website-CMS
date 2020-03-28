@@ -21,6 +21,7 @@ import PassMembers from "./Members/PassMembers";
 import PassPapers from "./Papers/PassPapers";
 import PassProjects from './Projects/PassProjects';
 import PassNews from './News/PassNews';
+import UploadImages from './UploadImages';
 
 function App() {
   const [key, setKey] = useState('home');
@@ -69,6 +70,13 @@ function App() {
         <Tab eventKey="news" title="DAML News">
         
         <PassNews/>
+
+        </Tab>
+
+        {/*Upload Images*/}
+        <Tab eventKey="upload" title="Image Upload">
+        
+        <UploadImages className = "fullpage"/>
 
         </Tab>
 
