@@ -21,7 +21,7 @@ export default class UploadImages extends React.Component {
     data.append('file', files[0])
     data.append('upload_preset', 'damlImages')
     this.setState({loading: true});
-    this.setState({currenturl: "Loading..."})
+    this.setState({currenturl: "Loading URL..."})
     const res = await fetch(
       'https://api.cloudinary.com/v1_1/dndwfzjzr/image/upload', 
       {
@@ -39,7 +39,7 @@ export default class UploadImages extends React.Component {
 
   isLoading = () => {
     if (this.state.loading){
-      return (<h3>"-Loading..."</h3>)
+      return ("-Loading...")
     }
     else
       return ""
@@ -53,7 +53,7 @@ export default class UploadImages extends React.Component {
       <Row>
         <Col md = {6}>
         <div className = "left">
-        <h1>Image Upload {this.isLoading}</h1>
+        <h1>Image Upload</h1>
         <br/>
         <h3>1. Upload File</h3>
         <h3>2. Copy URL</h3>
