@@ -72,14 +72,14 @@ function App() {
         <PassNews/>
 
         </Tab>
-
-        {/*Upload Images*/}
+         
+        {/*
         <Tab eventKey="upload" title="Image Upload">
         
         <UploadImages className = "fullpage"/>
 
-        </Tab>
-
+        </Tab> */}
+          
       </Tabs>
 
       </main>
