@@ -24,9 +24,22 @@ export default class AddMembers extends React.Component {
     currentlinkedIn: "",
     currentbiography: "",
     currentuid: "",
-    currentbutton: ""
+    currentbutton: "",
+    currentfilename: "",
+    buttontext: "Submit",
+    fileuploaded: false
 	
 };
+
+Uploaded = () => {
+  if (this.state.fileuploaded){
+    return (
+      <div>
+    <span >{this.state.currentfilename}</span><br/><br/>
+    </div>
+    )
+  }
+}
 
 
 componentDidMount() {
@@ -44,9 +57,36 @@ componentDidMount() {
     
 };
 
+imageUpload =  async (e) => {
+   
+  if(e.target[9].files[0] === undefined){ return "https://www.dukeaml.com/static/media/profile-placeholder.d371ccb1.svg"};
+  const files = e.target[9].files
+  const data = new FormData()
+  data.append('file', files[0])
+  data.append('upload_preset', 'damlImages')
+  this.setState({loading: true});
+  this.setState({currenturl: "Loading URL..."})
+  const res = await fetch(
+    'https://api.cloudinary.com/v1_1/dndwfzjzr/image/upload', 
+    {
+      method: 'POST',
+      body: data
+  }
+  ) 
+  const file = await res.json()
+  //console.log(file);
+  this.setState({currenturl: "https://res.cloudinary.com/dndwfzjzr/" + file.public_id});
+  return ("https://res.cloudinary.com/dndwfzjzr/" + file.public_id);
+  
+}
+
 postMembers =  async (event) => {
     event.preventDefault();
+    event.persist();
+    this.setState({buttontext: "Loading..."});
+    let photoLink = await this.imageUpload(event);
     
+    //console.log(photoLink);
    /*  console.log(event.target[0].value);
     console.log(event.target[1].value);
     console.log(event.target[2].value);
@@ -64,12 +104,12 @@ postMembers =  async (event) => {
       password: "",
       team: event.target[3].value,
       major: event.target[5].value,
-      biography: event.target[9].value,
+      biography: event.target[8].value,
       graduationYear: "",
       school: event.target[4].value,
       githubLink: event.target[7].value,
       linkedIn: event.target[6].value,
-      photoString: event.target[8].value
+      photoString: photoLink
     };
   //console.log(mem);
   let response = await axios.post('https://dukeappml.herokuapp.com//user/new', mem);
@@ -97,6 +137,15 @@ postMembers =  async (event) => {
 
 updateMembers =  async (event) => {
   event.preventDefault();
+  event.persist();
+  this.setState({buttontext: "Loading..."});
+  let photoLink = this.state.currentphotoString;
+  if(event.target[9].files[0] !== undefined){
+    photoLink = await this.imageUpload(event);
+  }
+  
+    
+  
   var mem = {
     firstName: event.target[0].value, 
     lastName: event.target[1].value, 
@@ -104,12 +153,12 @@ updateMembers =  async (event) => {
     password: "",
     team: event.target[3].value,
     major: event.target[5].value,
-    biography: event.target[9].value,
+    biography: event.target[8].value,
     graduationYear: "",
     school: event.target[4].value,
     githubLink: event.target[7].value,
     linkedIn: event.target[6].value,
-    photoString: event.target[8].value
+    photoString: photoLink
   };
 
 let URL = 'https://dukeappml.herokuapp.com//user/' + this.state.currentuid;
@@ -137,6 +186,7 @@ window.location.reload();
 
 deleteMembers = async (event) => {
   event.preventDefault();
+  this.setState({buttontext: "Loading..."});
  
   //console.log(this.state.currentuid);
   let URL = 'https://dukeappml.herokuapp.com//user/' + this.state.currentuid;
@@ -155,7 +205,7 @@ deleteMembers = async (event) => {
   this.setState({currentphotoString: ""});
   this.setState({currentbiography: ""});
   this.setState({currentuid: ""});
-console.log(response);
+  console.log(response);
   
 
   window.location.reload();
@@ -276,7 +326,16 @@ this.getMembers();
       this.setState({currentphotoString: ""});
       this.setState({currentbiography: ""});
       this.setState({currentuid: ""});
+      this.setState({currentfilename: ""});
+      this.setState({fileuploaded: false});
   }
+}
+
+handleFile = (event) => { 
+  this.setState({currentfilename: event.target.value});
+  this.setState({fileuploaded: true});
+  
+  
 }
 
 handleTeamChange = (event) => { 
@@ -345,22 +404,24 @@ handleTeamChange = (event) => {
         <Label for="Github">Personal Github Link </Label>
         <Input type="text" name="githubM" id="Github" placeholder="ex. website.com" defaultValue = {this.state.currentgithubLink}/>
       </FormGroup>
-                  {/*File input for Cover Photo*/}
+      {/*File input for Cover Photo*/}
       <FormGroup>
-        <Label for="CoverPhoto">Cover Photo </Label>
-        <Input type="text" name="coverphotoM" id="CoverPhoto" placeholder = "instagram.com/wyfocht/hotBeachPicture" defaultValue = {this.state.currentphotoString}/>
-      </FormGroup>
-       {/*File input for Cover Photo*/}
-       <FormGroup>
         <Label for="CoverPhoto">Short Biography </Label>
         <Input type="textarea" name="bioM" id="shortbio" placeholder = "Yasa Baig is..." defaultValue = {this.state.currentbiography}/>
       </FormGroup>
+                  {/*File input for Cover Photo*/}
+      <FormGroup>
+        <Label for="CoverPhoto">Cover Photo </Label>
+        <Input onChange = {this.handleFile} type="file" name="coverphotoM" id="CoverPhoto" placeholder = "instagram.com/wyfocht/hotBeachPicture" defaultValue = {this.state.currentphotoString}/>
+      </FormGroup>
+      {this.Uploaded()}
+       
       
       
                   {/*Form Submit Button*/}
       <Row>
         <Col>
-        <Button className="button">Submit</Button>
+        <Button className="button">{this.state.buttontext}</Button>
       </Col>
 
       </Row>

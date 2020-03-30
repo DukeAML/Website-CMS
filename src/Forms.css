@@ -53,10 +53,7 @@ Button, .button {
   background-color: #2b3e50;
 }
 
-input[type = "text"]{
-  outline-style: solid;
-  outline-color: #2b3e50;
-}
+
 
 input[type = "file"]{
   
